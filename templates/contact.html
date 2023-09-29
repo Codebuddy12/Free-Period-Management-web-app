@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+        font-size: 40px;
+        margin-bottom: 40px;
+        color: red;
+    }
+    p{
+        width:500px;
+        margin-left: 400px;
+        border-radius: 20px;
+        border-style: inset;
+        border-width: 5px;
+        font-size: 25px;
+        padding: 80px;
+        color:floralwhite;
+    }
+    body{
+        background-image: url('{% static "cp.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: 1470px 800px;
+        background-position: center;
+        background-attachment: fixed;
+        backdrop-filter: blur(4px);
+    }
+</style>
+<body>
+    <header align="center"> Contact </header>
+    <p><b>Postal Address:<br><br>
+
+        College of Engg. Pune,<br>
+        Wellesely Rd,<br>
+        Shivajinagar,<br>
+        Pune-411 005.<br>
+        Maharashtra, INDIA.<br><br>
+        Telephone:<br>
+
+        +91-20-25507000<br><br>
+       
+        
+       
+        Fax:<br>
+       
+        +91-20-25507299</b><br></p>
+</body>
+</html>

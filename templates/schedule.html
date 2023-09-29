@@ -1,0 +1,65 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid green;
+            border-collapse: collapse;
+            width:400px;
+            height:80px;
+            font-size: 20px;
+            text-align: center;
+        }
+        header{
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: dark red;
+        }
+        body{
+            background-image: url('{% static "cp.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+        #e{
+            color:red;
+        }
+        h2{
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header align="center">Your weeks Schedule</header>
+    <table align="center">
+    <tr>
+        <th><b>Day</b></th>
+        <th><b>Duration</b></th>
+    </tr>
+    {% for d in dest %}
+        {% if d.Name == request.user %} 
+        <tr>
+            <td><b>{{d.Day}}</b></td>
+            <td><b>{{d.Time}}</b></td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    {% for p in per %}
+        {% if p.Free_Period_Taken_By == request.user %} 
+        <tr>
+            <td id="e"><b>{{p.Day}}</b></td>
+            <td id="e"><b>{{p.Time}}</b></td>
+        </tr>
+        {% endif %}
+    {% endfor %}
+    </table>
+    <h2 align="center"><b>* Red color indicates it is free Period taken</b></h2>
+</body>
+</html>

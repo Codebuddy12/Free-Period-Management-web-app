@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('{% static "cp.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+        p{
+            margin-top:140px;
+            font-size: 25px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+    <p align="center"><b>You free period is deleted successfully</b></p>
+    <form action="{%url 'Details' %}">
+        <input align="center" type="submit" value="Go to Home">
+    </form>
+    </div>    
+</body>
+</html>

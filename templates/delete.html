@@ -1,0 +1,57 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('{% static "cp3.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+        header{
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: red;
+        }
+
+        #h{
+            font-size: 20px;
+            color:antiquewhite;
+        }
+        .a{
+            font-size: 30px;
+            margin-top: 30px;
+            color:darkorange;
+        }
+    </style>
+</head>
+<body>
+    <header align="center"><b> Your Free Periods</b> </header>
+    <div id="h" align="center"> 
+        {% for p, pe in z %}
+                  <p><b>Day: {{p.day}}</b></p>
+                  <p><b>Time: {{p.time}}</b></p>
+                  <p><b>Free Period taken by: {{p.name}}</b></p>
+                  <form action="{% url 'deleteH' pe.id %}">
+                  <input type="submit" ></option>
+                  </form>
+                  <hr>
+        {% endfor %}
+       </div>
+    <div align="center">
+        {% for message in messages %}
+        <p class="a"><b>{{message}}</b></p> 
+        <form action="{%url 'Details'%}">
+            <input type="submit" value="Go Back">
+        </form>
+        {% endfor %}
+    </div>
+</body>
+</html>

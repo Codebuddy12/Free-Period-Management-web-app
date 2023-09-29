@@ -1,0 +1,54 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: red;
+        }
+
+        body{
+            background-image: url('{% static "cp.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+    #h{
+        font-size:20px;
+    }
+    </style>
+</head>
+<body>
+    <header align="center"> Your Lectures  </header>
+    <div id="h" align="center"> 
+    {% for p in per %}
+        {% if p.Name == request.user %}
+              {% if p.Free == False  %}
+              <p>Day: {{p.Day}}</p><b>
+              <p>Time: {{p.Time}}</p><b>
+              <form action="{% url 'add' p.id %}">
+              <input type="submit" value="Proceed"></option>
+              </form>
+              <hr>
+              {% endif %}
+        {% endif %}
+    {% endfor %}
+   </div>
+   <div align="center">
+    {% for message in messages %}
+    <p class="a"><b>{{message}}</b></p> 
+    <form action="{%url 'Details'%}">
+        <input type="submit" value="Go Back">
+    </form>
+    {% endfor %}
+</div>
+</body>
+</html>

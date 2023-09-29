@@ -1,0 +1,63 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color:red;
+            margin-top: 130px;
+            font-size: 40px;
+        }
+        h2{
+            font-family: cursive;
+        }
+
+        #name{
+            font-size: 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        #word{
+            font-size: 30px;
+            margin-top: 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        body{
+            background-image: url('{% static "cp2.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+
+        #h{
+            height:30px;
+            border-radius:5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <h1 align="center">WELOME TO FREE PERIOD MANAGEMENT SYSTEM</h1>
+    <h2 align="center">LogIn</h2>
+    <form action="login" method="post" align="center">
+        {%csrf_token%}
+        <input id="name" type="text" name="username" placeholder="username"><br>
+        <input id="word" type="password" name="password" placeholder="password"><br>
+        <input id="h" type="Submit" value="Login">
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3> {{message}} </h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid green;
+            border-collapse: collapse;
+            width:400px;
+            height:80px;
+            font-size: 20px;
+            text-align: center;
+            margin-top: 80px;
+            margin-bottom: 30px;
+        }
+        td{
+            color:red;
+
+        }
+        .a{
+            color:#3300ff;
+        }
+        body{
+            background-image: url('{% static "coep5.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+        .ar{
+            color: crimson;
+        }
+        h2{
+            margin-top: 124px;
+            color:lightcyan;
+        }
+    </style>
+</head>
+<body>
+    {% if pt1 < pt2 %}
+    <form action="{% url 'Details' %}" align="center">
+        <h2>Sorry this period is taken by another faculty</h2>
+         <h2>Note:Please check Reserve points Rule in Features Section
+        </h2>
+        <input type="submit" value="Return" ></b>
+    </form>
+
+    {% else %}
+    <h2 class='ar' align="center"><b>Congrats! Your Free Period generated successfully</b></h3>
+    <form action="{% url 'Details' %}" align="center">
+    <table align="center">
+    <tr>
+        <td class="a"><b>Period of</b></td>
+        <td><b>{{m.Name}}</b></td>
+    </tr>
+    <tr>
+        <td class="a"><b>Date</b></td>
+        <td><b>{{m.Day}}</b></td>
+    </tr>
+    <tr>
+        <td class="a"><b>Time</b></td>
+        <td><b>{{m.Time}}</b></td>
+    </tr>
+    </table>
+    <input type="submit" value="Return" ></b>
+    </form>
+    {% endif %}
+</body>
+</html>

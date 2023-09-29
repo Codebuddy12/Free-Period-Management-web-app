@@ -1,0 +1,43 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body{
+        background-image: url('{% static "cp2.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: 1470px 800px;
+        background-position: center;
+        background-attachment: fixed;
+        backdrop-filter: blur(4px);
+    }
+    header{
+        font-size: 40px;
+        margin-bottom: 40px;
+        color: red;
+    }
+    form{
+        font-size: 20px;
+    }
+   </style>
+</head>
+<body>
+    <header align="center"> Available Free Period </header>
+    {% for p in per %}
+    {% if p.Free == True and p.Name != request.user %} 
+       <form action="{% url 'takeH' p.id %}" align="center">
+        <b><p > Name:      {{p.Name}} </p>
+        <p> Day:     {{p.Day}}</p>
+        <p> Time:     {{p.Time}}</p>
+        <p> Free period taken By: {{p.Free_Period_Taken_By}}</p>
+        <input type="submit" value="Take Period" ></b>
+        </form>
+        <hr>
+    {% endif %} 
+    {% endfor %}
+</body>
+</html>

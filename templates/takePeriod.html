@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        Add Free Period
+    </header>
+    <form action="{% url 'addFree' %}">
+        {%csrf_token%}
+    <p>Select Day</p>
+        <select name="Day">
+            {% for d in day %}
+            <option>{{d}}</option>
+            {% endfor %}
+        </select>
+    <p>Select the teacher you want to give free Period</p>
+    <select name="name">
+    {%for us in user%}
+        {%if us.Name == 'sidhesh' or us.Name == 'None' %}
+        {% else %}
+             <option>{{us.Name}}</option>
+        {% endif %}
+    {%endfor%}
+    </select>
+    <input type="submit" value="insert">
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            font-size: 40px;
+            margin-bottom: 40px;
+            color: red;
+        }
+        p{
+            width:800px;
+            margin-left: 360px;
+            border-radius: 20px;
+            border-style: inset;
+            border-width: 5px;
+            font-size: 25px;
+            padding: 10px;
+            background-color: red;
+        }
+        body{
+            background-image: url('{% static "cp.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: 1470px 800px;
+            background-position: center;
+            background-attachment: fixed;
+            backdrop-filter: blur(4px);
+        }
+
+        ul{
+            margin-left: 300px;
+            font-size: 25px;
+            margin-top: 50px;
+            margin-right: 200px;
+            border-radius: 20px;
+            border-style: inset;
+            border-width: 5px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header align="center"> About Us </header>
+    <p><b>Features of App</b></p>
+    <ul>
+        <li> Safe login</li>
+        <li> Make your period free when you are busy</li>
+        <li>Delete your free period when you need to take the period</li>
+        <li>Lagging Behind in syllabus! Take free period of other faculty</li>
+        <li>Check your Schedule</li>
+        <li> Check the reserve points</li>
+        <li>
+            <h4>Reserve Point Rule</h4>
+            If two Faculty wants the same free period the faculty with higher reserve points get that period 
+        </li>
+    </ul>
+</body>
+</html>
