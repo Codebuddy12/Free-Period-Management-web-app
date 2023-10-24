@@ -16,4 +16,5 @@ urlpatterns = [
     path('delete',views.delete,name='delete'),
     path('addP/<str:pk>/',views.addP,name='addP'),
     path('deleteH/<str:pk>/',views.deleteH,name='deleteH'),
+    path('department',views.department,name='department'),
 ]

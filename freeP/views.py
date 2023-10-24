@@ -15,7 +15,8 @@ def home(request):
     dest1=Details.objects.all()
     return render(request,'home.html',{'dest1':dest1})
 
-
+def department(request):
+    return render(request,'department.html')
 
 def addFreePeriod(request):
     day=Days.objects.all()
