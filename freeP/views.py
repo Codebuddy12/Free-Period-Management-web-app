@@ -100,6 +100,9 @@ def about(request):
 def contact(request):
     return render(request,'contact.html')
 
+def department(request):
+    return render(request,'department_contact.html')
+
 def delete(request):
     per=Period.objects.filter(Name=request.user,Free=True).values()
     print(per)
