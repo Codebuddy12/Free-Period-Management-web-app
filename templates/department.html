@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+        font-size: 35px;
+        margin-bottom: 40px;
+        color: red;
+    }
+    p{
+        width:500px;
+        margin-left: 400px;
+        border-radius: 20px;
+        border-style: inset;
+        border-width: 5px;
+        font-size: 25px;
+        padding: 80px;
+        color:floralwhite;
+    }
+    body{
+        background-image: url('{% static "cp.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: 1470px 800px;
+        background-position: center;
+        background-attachment: fixed;
+        backdrop-filter: blur(4px);
+    }
+    li{
+        margin-top:20px;
+    }
+    a{
+        text-decoration:inherit;
+        font-size:25px;
+        color:blue;
+    }
+</style>
+<header align="center"><b> Department </b></header>
+<body>
+    <li><a href="https://www.coep.org.in/departments/appliedscience"><b>Department of Applied Science</li>
+    <li><a href="https://www.coep.org.in/departments/biel">Bhau Institute of Innovation, Entrepreneurship and Leadership</li>
+    <li><a href="https://www.coep.org.in/departments/civil">Department of Civil Engineering</li>
+    <li><a href="coep.org.in/departments/computerit/aboutdep">Department of Computer Engineering & IT</li>
+    <li><a href="https://www.coep.org.in/departments/electrical">Department of Electrical Engineering</li>
+    <li><a href="https://www.coep.org.in/departments/entc">Department of Electronics and Telecommunication Engineering</li>
+    <li><a href="https://www.coep.org.in/departments/instru">Department of Instrumentation and Control Engineering</li>
+    <li><a href="https://www.coep.org.in/content/mathematics">Department of Mathematics</li>
+    <li><a href="https://www.coep.org.in/departments/mechanical">Department of Mechanical Engineering</li>
+</body>
+</html>
